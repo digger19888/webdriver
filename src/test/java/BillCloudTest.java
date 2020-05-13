@@ -27,9 +27,16 @@ public class BillCloudTest {
         List<WebElement> calcBtn = driver.findElements(By.xpath("//*[@class='devsite-nav-item-title']"));
         calcBtn.get(261).click();
 
-        List<WebElement> computeengineBtn = driver.findElements(By.xpath("//*[@class='md-ripple-container']"));
-        computeengineBtn.get(0).click();
+//        List<WebElement> computeBtn = driver.findElements(By.xpath("//*[@class='name ng-binding']"));
+//        computeBtn.get(0).click();
 
+//        new WebDriverWait(driver, 50)
+//                .until(ExpectedConditions
+//                        .presenceOfAllElementsLocatedBy(By.xpath("//*[@class='md-ripple-container']")) );
+
+
+        WebElement numberInput = driver.findElement(By.id("input_58"));
+        numberInput.sendKeys("4");
 
         driver.quit();
     }
