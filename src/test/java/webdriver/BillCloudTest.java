@@ -64,8 +64,8 @@ public class BillCloudTest {
 
 //        driver.switchTo().frame(0);
 //        driver.switchTo().frame("myFrame");
-        WebElement envInput = switchToFrameWithWebElement(driver, By.id("input_58"));
-        WebElement envInput = driver.findElement(By.id("input_58"));
+
+        WebElement envInput = switchToFrameWithWebElement(driver, By.xpath("//*[@id='input_58']/.."));
         envInput.sendKeys("4");
 
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id='input_58']")));
@@ -91,7 +91,7 @@ public class BillCloudTest {
 
     public WebElement switchToFrameWithWebElement(WebDriver driver, By xpathWebElem) //xpathWebElem is xpath of element you want to click
     {
-        By byFrameXPath = By.tagName("frame"); // or By.tagName("iframe")
+        By byFrameXPath = By.tagName("iframe"); // or By.tagName("iframe")
 
         // Get all frames by xpath.
         List<WebElement> iframeList = driver.findElements(byFrameXPath);
